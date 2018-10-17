@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './styles/styles.scss';
 
 const jsx = (
-    <div>HELLO WORLD FROM REACT</div>
+    <div>xX_HELLO WORLD FROM REACT_Xx_69_420</div>
 );
 
 const appRoot = document.getElementById('app');
