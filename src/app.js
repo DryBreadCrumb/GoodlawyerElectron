@@ -8,4 +8,5 @@ const jsx = (
 );
 
 const appRoot = document.getElementById('app');
+document.getElementById('no-webpack').style.display = 'none'; // hide the webpack error if webpack is running
 ReactDOM.render(jsx,appRoot);
