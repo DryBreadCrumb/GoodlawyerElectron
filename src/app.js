@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
+import AppRouter from './routers/AppRouter';
 
 import './styles/styles.scss';
 
+
+var test = "1"
+
 const jsx = (
-    <div>xX_HELLO WORLD FROM REACT_Xx_69_420</div>
+    <div id="appMain">
+    <HashRouter>
+        <AppRouter />
+    </HashRouter>
+    </div>
 );
 
 const appRoot = document.getElementById('app');
