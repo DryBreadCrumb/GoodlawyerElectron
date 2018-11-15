@@ -10,4 +10,5 @@
 ### Notes
 1. Use `git pull upstream master` to update local repository
 2. Run `npm install` after every pull to make sure you have all the right dependencies
-3. Push changes to forked repo, then submit PR via github.com
+3. Make your changes in a branch in your repo (`git checkout -b some-branch-name`)
+4. Push changes to forked repo, then submit PR via github.com
