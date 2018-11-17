@@ -6,7 +6,8 @@ let mainWindow;
 
 app.on('ready',() => {
     mainWindow = new BrowserWindow({});
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL("http://www.goodlawyer.ca");
+    // mainWindow.loadURL(`file://${__dirname}/index.html`);   ummm
     mainWindow.setTitle('Goodlawyer Desktop');
     mainWindow.maximize();
 });
