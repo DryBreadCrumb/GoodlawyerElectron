@@ -4,20 +4,20 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 
 import LandingPage from '../components/LandingPage';
-import test from '../components/test';
+import Login from '../components/Login';
 
 
 class AppRouter extends React.Component{
     constructor(props){
       super(props);
     }
-  
+
     render(){
       return (
             <div>
                 <Switch>
-                    <Route path="/" component={LandingPage} exact={true} />
-                    <Route path="/test" component={test} exact={true} />
+                    <Route path="/" component={Login} exact={true} />
+                    <Route path="/login" component={Login} exact={true} />
 
                 </Switch>
             </div>

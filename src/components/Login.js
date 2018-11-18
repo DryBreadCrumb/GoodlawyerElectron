@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setFirstName} from '../actions/userActions';
+import {setFirstName, getLawyers} from '../actions/userActions';
 
-class test extends React.Component{
+class Login extends React.Component{
 
     constructor(props){
         super(props);
@@ -12,7 +12,8 @@ class test extends React.Component{
     }
 
     save(){
-        this.props.dispatch(setFirstName(this.state.firstName))
+        this.props.dispatch(setFirstName(this.state.firstName));
+        this.props.dispatch(getLawyers());
     }
 
     onChange(e){
@@ -24,7 +25,7 @@ class test extends React.Component{
         return (
             <div>
                 <button onClick={this.save}>Click</button>
-                <span>
+                <span className='login-NameSpan'>
                     {this.props.firstName}
                 </span><input value={this.state.firstName} onChange={this.onChange} />
             </div>
@@ -39,4 +40,4 @@ const mapStateToProps = (state)=>{
     }
 }
 
-export default connect(mapStateToProps)(test);
+export default connect(mapStateToProps)(Login);
