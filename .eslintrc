@@ -6,11 +6,11 @@
         "node": true
     },
     "rules": {
-        "quotes": [1, "single"],
+        "quotes": ["warn", "single"],
         "semi": ["error", "always"],
-        "no-console": 1,
-        "no-unused-vars": 1,
-        "react/prop-types": 0
+        "no-console": "warn",
+        "no-unused-vars": "warn",
+        "react/prop-types": "off"
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
