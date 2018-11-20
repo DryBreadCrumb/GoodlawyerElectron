@@ -1,11 +1,16 @@
 {
     "parser": "babel-eslint",
+    "plugins": [ "react" ],
     "env": {
         "browser": true,
         "node": true
     },
     "rules": {
         "quotes": [1, "single"],
-        "semi": ["error", "always"]
-    }
+        "semi": ["error", "always"],
+        "no-console": 1,
+        "no-unused-vars": 1,
+        "react/prop-types": 0
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
