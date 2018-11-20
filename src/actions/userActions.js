@@ -10,7 +10,7 @@ export const getLawyers = () => {
 	return function(dispatch) {
 		return axios.get('http://localhost:3001/users/lawyers', {
 			params: {
-				id: "5bc2632b875b585047eb1877"
+				id: '5bc2632b875b585047eb1877'
 			}
 		}).then((response) => {
 			console.log(response);
