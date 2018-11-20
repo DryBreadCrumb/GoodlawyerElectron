@@ -9,8 +9,8 @@ const userReducer = (state = defaultState, action) => {
 				firstName: action.firstName
 			};
 		default:
-			return defaultState
+			return defaultState;
 	}
-}
+};
 
 export default userReducer;

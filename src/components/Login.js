@@ -6,7 +6,7 @@ class Login extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {firstName:''}
+        this.state = {firstName:''};
         this.save = this.save.bind(this);
         this.onChange = this.onChange.bind(this);
     }
@@ -18,7 +18,7 @@ class Login extends React.Component{
 
     onChange(e){
         let firstName = e.target.value;
-        this.setState(()=>{return {firstName}})
+        this.setState(()=>{return {firstName};});
     }
 
     render() {
@@ -29,7 +29,7 @@ class Login extends React.Component{
                     {this.props.firstName}
                 </span><input value={this.state.firstName} onChange={this.onChange} />
             </div>
-        )
+        );
     }
 }
 
@@ -37,7 +37,7 @@ const mapStateToProps = (state)=>{
     console.log(state);
     return {
         firstName: state.firstName
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps)(Login);
