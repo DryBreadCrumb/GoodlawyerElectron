@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export const setFirstName=(firstName)=>{
 	return{
 		type:'FIRSTNAME', firstName
-	}
-}
+	};
+};
 
 export const getLawyers = () => {
 	return function(dispatch) {
@@ -17,6 +17,6 @@ export const getLawyers = () => {
 			//dispatch(setFirstName(response.data[0].firstName));
 		}).catch((e) => {
 			console.log(e);
-		})
-	}
-}
+		});
+	};
+};

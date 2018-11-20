@@ -13,7 +13,7 @@ class LandingPage extends React.Component{
             <div> PLEASE WORK</div>
             <Link to={'/test'}>Click me</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
             </div>
-        )
+        );
     }
 
 }

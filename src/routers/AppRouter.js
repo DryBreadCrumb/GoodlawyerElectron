@@ -21,7 +21,7 @@ class AppRouter extends React.Component{
 
                 </Switch>
             </div>
-      )
+      );
     }
 
 }
