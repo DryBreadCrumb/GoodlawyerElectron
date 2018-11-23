@@ -1,12 +1,12 @@
 const defaultState = {
-	firstName:'parker'
+	email:'parker'
 };
 
 const userReducer = (state = defaultState, action) => {
 	switch(action.type){
-		case 'FIRSTNAME':
+		case 'EMAIL':
 			return{
-				firstName: action.firstName
+				email: action.email
 			};
 		default:
 			return defaultState;
