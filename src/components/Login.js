@@ -61,26 +61,44 @@ class Login extends React.Component{
 
     render() {
         return (
-          <form className='Login-Form'>
-            <div>
-              <label className='Login-EmailText'>Email</label>
-              <input type="text" name="email" className='Login-EmailInput' onChange={this.handleChange} />
+          
+<div id='outerLogin'>
+    <div className="login-container">
+        <div className="row login-content-row">
+            <div className="col-12">
+                <span className="login-title">Log in to Goodlawyer</span>
+                <span className="login-sub-title">Please enter your credentials below</span>
             </div>
+        </div>
+        <div className="row login-content-row">
+            <div className="col-12">
 
-            <div>
-              <label className='Login-PasswordText'>Password</label>
-              <input type="password" name="password" onChange={this.handleChange}/>
-            </div>
+                <form className='Login-Form'>
+                    <div className='input-group'>
+                        <span className='default-text-label'>Email</span>
+                        <input type="text" name="email" className='input-default' onChange={this.handleChange} />
+                    </div>
 
-            <div>
-              <button onClick={this.handleClick}>Log In</button>
-              <button onClick={this.check}>Check</button>
-            </div>
+                    <div className='input-group'>
+                        <span className='default-text-label'>Password</span>
+                        <input className='input-default' type="password" name="password" onChange={this.handleChange}/>
+                    </div>
 
-            <div>
-              <label>{this.state.authStatus}</label>
+                    <div>
+                        <button className="button-big-primary" onClick={this.handleClick}>Log In</button>
+                        <button onClick={this.check}>Check</button>
+                    </div>
+
+                    <div>
+                        <label>{this.state.authStatus}</label>
+                    </div>
+                </form>
+
             </div>
-          </form>
+        </div>
+    </div>
+</div>
+
         );
     }
 }
