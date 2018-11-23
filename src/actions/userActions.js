@@ -15,9 +15,9 @@ export const authenticate = (user) => {
 				return(response.headers['x-auth']);
 			})
 			.catch((e) => {
-				if (e.response.status == 400)
+				if (e && e.response.status == 400)
 				{
-					console.log("Bad login");
+					console.log('Bad login');
 					return 'invalid';
 				}
 		});
