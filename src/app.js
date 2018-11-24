@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import AppRouter from './routers/AppRouter';
 import thunkMiddleware from 'redux-thunk';
-import './styles/styles.scss';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import userReducer from './reducers/userReducer';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.scss';
+
 const store = createStore(userReducer,compose(applyMiddleware(thunkMiddleware)));
 
 const jsx = (
-    
+
         <div id="appMain">
             <Provider store={store}>
                 <HashRouter>
@@ -19,7 +22,7 @@ const jsx = (
                 </HashRouter>
             </Provider>
         </div>
-    
+
 );
 
 const appRoot = document.getElementById('app');
