@@ -18,7 +18,7 @@ export const authenticate = user => {
 			.catch(e => {
 				if (e && e.response.status == 400) {
 					console.log('Bad login');
-					return 'invalid';
+					throw 'invalid';
 				}
 			});
 	};

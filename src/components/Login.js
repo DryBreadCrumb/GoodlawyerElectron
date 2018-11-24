@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setEmail, authenticate } from '../actions/userActions';
 import createElectronStore from 'electron-store-webpack-wrapper';
 
-const store = new createElectronStore();
+const store = createElectronStore();
 
 class Login extends React.Component {
 	constructor(props) {
@@ -31,13 +31,14 @@ class Login extends React.Component {
 			password: this.state.password
 		};
 		this.props.dispatch(authenticate(user)).then(result => {
-			if (result == 'invalid') {
-				this.setState({ authStatus: 'Invalid Login' });
-			} else {
+			{
 				this.setState({ authStatus: 'Logging in' });
 				console.log('Storing', result);
 				store.set('jwt', result);
 			}
+		}).catch( e => {
+			// TODO: check for specific error codes
+				this.setState({ authStatus: 'Invalid Login' });
 		});
 		//debugger;
 		//console.log(token);
