@@ -1,5 +1,5 @@
 const defaultState = {
-  email: 'parker'
+  email: ''
 };
 
 const userReducer = (state = defaultState, action) => {
