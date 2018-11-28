@@ -6,6 +6,7 @@ import LandingPage from '../components/LandingPage';
 import Login from '../components/Login';
 import QuotesOverview from '../components/QuotesOverview';
 import QuotesDetail from '../components/QuotesDetail';
+import Feed from '../components/Feed';
 
 // import Quotes from '../components/Quotes';
 // import QuoteDetails from '../components/QuoteDetails';
@@ -29,6 +30,7 @@ class AppRouter extends React.Component {
 				<Switch>
 					<Route path='/' component={LandingPage} exact={true} />
 					<Route path='/login' component={Login} exact={true} />
+					<Route path='/feed' component={Feed} exact={true} />
 
 					<Route path='/quotes' component={QuotesOverview} exact={true} />
 					<Route path='/quotes/:id' component={QuotesDetail} exact={true} />
