@@ -10,7 +10,7 @@ class Feed extends React.Component {
     render() {
         return (
             <div>
-				<Link to={'/'}>Click me</Link>
+				<Link to={'/login'}>Click me</Link>
             </div>
         );
     }
