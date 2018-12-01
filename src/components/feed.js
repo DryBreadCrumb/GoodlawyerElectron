@@ -17,14 +17,10 @@ class Feed extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <div className="sidebar-general"></div> 
-                    <Sidebar/>
-                </div>
-
-                
-            # TODO
-            <div>
+            <div className='sidebar-general'>
+                <Sidebar/>
+            </div>
+            <div className='main-content'>
                 <span className='login-sub-title'>
                 my work here is done
                 </span>
