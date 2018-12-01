@@ -1,16 +1,36 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 class Feed extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+        };
     }
+
+    // logout(){
+    //     this.props.dispatch(logoutUser());
+    // }
 
     render() {
         return (
             <div>
-				<Link to={'/login'}>Click me</Link>
+                <div>
+                    <div className="sidebar-general"></div> 
+                    <Sidebar/>
+                </div>
+
+                
+            # TODO
+            <div>
+                <span className='login-sub-title'>
+                my work here is done
+                </span>
+            </div>
+
+
             </div>
         );
     }
@@ -18,7 +38,6 @@ class Feed extends React.Component {
 
 const mapStateToProps = state => {
 	return {
-        
 	};
 };
 

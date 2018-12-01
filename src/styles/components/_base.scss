@@ -63,3 +63,40 @@ body {
   position: relative;
   font-size: 16px;
 }
+
+.nav-side-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 275px;
+  background-color:$goodlawyer-green;
+  overflow: hidden;
+  position:fixed;
+  z-index: 9999;
+  background-image: url('/assets/SidebarGradient.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width:$breakpoint-m){
+  /*CONTENT STYLES W/ SIDE NAV*/
+  .content-side-nav{
+      position: absolute;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+  }
+}
+
+@media screen and (min-width:$breakpoint-m){
+  /*CONTENT STYLES W/ SIDE NAV*/
+  .content-side-nav{
+      position: absolute;
+      left:275px;
+      right:0;
+      top:0;
+      bottom:0;
+  }
+}
