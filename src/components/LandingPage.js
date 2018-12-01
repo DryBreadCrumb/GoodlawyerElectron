@@ -11,7 +11,12 @@ class LandingPage extends React.Component{
         return (
             <div>
             <div> PLEASE WORK</div>
-            <Link to={'/test'}>Click me</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
+            <br/>
+            <Link to={'/login'}>Login</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
+            <br/>
+            <Link to={'/quotes'}>QuotesOverview</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
+            <br/>
+            <Link to={'/quotes/:id'}>QuotesDetail</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
             </div>
         );
     }
