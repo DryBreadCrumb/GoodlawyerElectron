@@ -31,11 +31,15 @@ class Login extends React.Component {
 			password: this.state.password
 		};
 		this.props.dispatch(authenticate(user)).then(result => {
-			{
-				this.setState({ authStatus: 'Logging in' });
-				console.log('Storing', result);
-				store.set('jwt', result);
-			}
+			
+			//this.setState({ authStatus: 'Logging in' });
+			this.setState(() => {
+				return {authStatus: 'Logging in'};
+			});
+			//console.log('Storing', result);
+			store.set('jwt', result);
+			this.props.history.push('/landing');
+			
 		}).catch( e => {
 			// TODO: check for specific error codes
 				this.setState({ authStatus: 'Invalid Login' });
@@ -77,6 +81,7 @@ class Login extends React.Component {
 										name='email'
 										className='input-default'
 										onChange={this.handleChange}
+										value={this.state.email}
 									/>
 								</div>
 
@@ -87,6 +92,7 @@ class Login extends React.Component {
 										type='password'
 										name='password'
 										onChange={this.handleChange}
+										value={this.state.password}
 									/>
 								</div>
 
@@ -116,7 +122,8 @@ const mapStateToProps = state => {
 	return {
 		email: state.email,
 		password: state.password,
-		authStatus: state.authStatus
+		authStatus: state.authStatus,
+		user:state.user
 	};
 };
 

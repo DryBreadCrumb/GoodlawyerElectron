@@ -1,5 +1,6 @@
 const defaultState = {
-  email: ''
+  email: '',
+  user:{}
 };
 
 const userReducer = (state = defaultState, action) => {
@@ -7,6 +8,11 @@ const userReducer = (state = defaultState, action) => {
     case 'EMAIL':
       return {
         email: action.email
+      };
+    case 'SET_USER':
+      return {
+        ...state,
+        user:action.user
       };
     default:
       return defaultState;

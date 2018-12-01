@@ -7,12 +7,21 @@ export const setEmail = email => {
 	};
 };
 
+export const setUser = (user) => {
+	return {
+		type:'SET_USER',
+		user
+	};
+};
+
 export const authenticate = user => {
-	return dispatch => {
+	return (dispatch) => {
 		return axios
 			.post('http://localhost:3001/users/login', user)
 			.then(function(response) {
 				console.log(response);
+				let user = response.data;
+				dispatch(setUser(user));
 				return response.headers['x-auth'];
 			})
 			.catch(e => {
