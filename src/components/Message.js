@@ -10,7 +10,10 @@ class Message extends React.Component{
     return(
       <div>
         {/*<div> msg </div>*/}
-        <div> Messages Page... </div>
+        <div>
+          <h1>Messages</h1>
+        </div>
+        <div> More to come soon... </div>
       </div>
     );
   }
