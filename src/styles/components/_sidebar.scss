@@ -8,11 +8,11 @@
 	overflow: hidden;
 	position:fixed;
 	z-index: 9999;
-	background-image: url('/assets/SidebarGradient.svg');
+	background-image: url('/src/build/resources/SidebarBG.svg');
 	background-size: cover;
 	background-position: center;
-  }
-  
+	}
+
   @media screen and (max-width:$breakpoint-m){
 	/*CONTENT STYLES W/ SIDE NAV*/
 	.content-side-nav{

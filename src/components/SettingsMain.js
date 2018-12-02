@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
 class SettingsMain extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-		
 		};
-		
 	}
 
 	render() {
 		return (
-			<div id='outerLogin'>
+			<div className='main-content'>
+				<div id='settings-main'>
+					these are the settings
+				</div>
 			</div>
 		);
 	}
@@ -22,7 +22,6 @@ class SettingsMain extends React.Component {
 const mapStateToProps = state => {
 	console.log(state);
 	return {
-		
 	};
 };
 
