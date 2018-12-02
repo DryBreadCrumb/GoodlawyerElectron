@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { HashRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import AppRouter from './routers/AppRouter';
 import thunkMiddleware from 'redux-thunk';
-
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import userReducer from './reducers/userReducer';
@@ -22,7 +21,6 @@ const jsx = (
                 </HashRouter>
             </Provider>
         </div>
-
 );
 
 const appRoot = document.getElementById('app');

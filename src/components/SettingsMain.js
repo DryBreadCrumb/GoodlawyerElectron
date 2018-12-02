@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Sidebar from './Sidebar';
 
 class SettingsMain extends React.Component {
 	constructor(props) {
@@ -10,11 +11,17 @@ class SettingsMain extends React.Component {
 
 	render() {
 		return (
-			<div className='main-content'>
+            <div>
+            <div className='sidebar-general'>
+                <Sidebar/>
+            </div>
+
+            <div className='main-content'>
 				<div id='settings-main'>
-					these are the settings
-				</div>
+				these are the settings
 			</div>
+            </div>
+        </div>
 		);
 	}
 }

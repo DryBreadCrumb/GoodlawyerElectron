@@ -1,7 +1,5 @@
-// /quotes/:id
-
 import React from 'react';
-import {Link} from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 class QuotesDetail extends React.Component{
 
@@ -12,14 +10,18 @@ class QuotesDetail extends React.Component{
     render() {
         return (
             <div>
-            <div> QuotesDetail </div>
-
-            <Link to={'/'}>Back to Landing Page</Link> { /* This is the way to link to other urls. Has to be inside the router itself */ }
-
+            <div className='sidebar-general'>
+                <Sidebar/>
             </div>
+
+            <div className='main-content'>
+                <span className='login-sub-title'>
+                Quotes QuotesDetail
+                </span>
+            </div>
+        </div>
         );
     }
-
 }
 
 export default QuotesDetail;
