@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {getFeed} from '../actions/feedAction';
 import Sidebar from './Sidebar';
 
 class Feed extends React.Component {
@@ -8,11 +9,23 @@ class Feed extends React.Component {
 
         this.state = {
         };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     // logout(){
     //     this.props.dispatch(logoutUser());
     // }
+
+    handleClick(e) {
+      e.preventDefault();
+      console.log('Starting GET request for new feed info');
+      this.props.dispatch(getFeed())
+      .then(result => {
+        console.log('Done');
+        console.log(result);
+      });
+    }
 
     render() {
         return (
@@ -26,6 +39,13 @@ class Feed extends React.Component {
                     <span className='login-sub-title'>
                     my work here is done
                     </span>
+
+                    <div>
+                      <button
+                        onClick={this.handleClick}>
+                        Get feed
+                        </button>
+                    </div>
                 </div>
 
             </div>
