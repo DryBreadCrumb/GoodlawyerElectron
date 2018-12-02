@@ -26,9 +26,9 @@ class AppRouter extends React.Component {
 		return (
 			<div>
 				<Switch>
+					<Route path='/' component={Login} exact={true} />
 					<Route path='/login' component={Login} exact={true} />
 					<Route path='/feed' component={Feed} exact={true} />
-
 					<Route path='/quotes' component={QuotesOverview} exact={true} />
 					<Route path='/quotes/:id' component={QuotesDetail} exact={true} />
 
