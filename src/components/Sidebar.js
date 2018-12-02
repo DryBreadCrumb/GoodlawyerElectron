@@ -21,15 +21,21 @@ class Sidebar extends React.Component
 						<div className='link-item'>
 							<Link to={'/quotes'}>Quotes - Overview</Link>
 						</div>
+
+						{/*<!--remove me>*/}
 						<div className='link-item'>
 							<Link to={'/quotes/:id'}>Quotes - Detail</Link>
 						</div>
+
 						<div className='link-item'>
 							<Link to={'/jobs'}>Jobs - Overview</Link>
 						</div>
+
+						{/*<!--remove me>*/}
 						<div className='link-item'>
 							<Link to={'/jobs/:id'}>Jobs - Detail</Link>
 						</div>
+
 						<div className='link-item'>
 							<Link to={'/message'}>Messages</Link>
 						</div>
