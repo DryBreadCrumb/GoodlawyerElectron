@@ -1,61 +1,61 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {getFeed} from '../actions/feedAction';
-import Sidebar from './Sidebar';
+import React from "react";
+import { connect } from "react-redux";
+import { getFeed } from "../actions/feedAction";
+import Sidebar from "./Sidebar";
+import FeedItem from "./FeedItem";
 
 class Feed extends React.Component {
-    constructor(props){
-        super(props);
+	constructor(props) {
+		super(props);
 
-        this.state = {
-        };
+		this.state = {
+			jobs: ""
+		};
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+		this.handleClick = this.handleClick.bind(this);
+		this.getFeedItems = this.getFeedItems.bind(this);
+	}
 
-    // logout(){
-    //     this.props.dispatch(logoutUser());
-    // }
+	// logout(){
+	//     this.props.dispatch(logoutUser());
+	// }
 
-    handleClick(e) {
-      e.preventDefault();
-      console.log('Starting GET request for new feed info');
-      this.props.dispatch(getFeed())
-      .then(result => {
-        console.log('Done');
-        console.log(result);
-      });
-    }
+	handleClick(e) {
+		e.preventDefault();
+	}
 
-    render() {
-        return (
-            <div>
+	getFeedItems() {
+		console.log("Starting GET request for new feed info");
+		this.props.dispatch(getFeed()).then(result => {
+			console.log("Done");
+			//console.log(result);
+			this.setState(() => {
+				return { jobs: result };
+			});
+		});
+	}
 
-                <div className='sidebar-general'>
-                    <Sidebar/>
-                </div>
+	render() {
+		this.getFeedItems();
+		return (
+			<div>
+				<div className="sidebar-general">
+					<Sidebar />
+				</div>
 
-                <div className='main-content'>
-                    <span className='login-sub-title'>
-                    my work here is done
-                    </span>
-
-                    <div>
-                      <button
-                        onClick={this.handleClick}>
-                        Get feed
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        );
-    }
+				<div className="main-content">
+					<span className="login-sub-title">Available Jobs</span>
+					<div>
+						<FeedItem jobs={this.state.jobs} />
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 const mapStateToProps = state => {
-	return {
-	};
+	return {};
 };
 
 export default connect(mapStateToProps)(Feed);
