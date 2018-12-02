@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 class JobsOverview extends React.Component{
     constructor(props){
@@ -9,9 +9,16 @@ class JobsOverview extends React.Component{
     render() {
         return (
             <div>
-                <Link to={'/'}>Back to Landing Page</Link>
-                <p>This is a placeholder for JobOverview</p>
+            <div className='sidebar-general'>
+                <Sidebar/>
             </div>
+
+            <div className='main-content'>
+                <span className='login-sub-title'>
+                Job Overview                
+                </span>
+            </div>
+        </div>
         );
     }
 }

@@ -1,6 +1,5 @@
 import React from 'react';
-
-// const msg = <h1> Message </h1>;
+import Sidebar from './Sidebar';
 
 class Message extends React.Component{
   constructor(props){
@@ -8,15 +7,19 @@ class Message extends React.Component{
   }
   render() {
     return(
+
       <div>
-        {/*<div> msg </div>*/}
-        <div>
-          <h1>Messages</h1>
-        </div>
-        <div> More to come soon... </div>
+      <div className='sidebar-general'>
+          <Sidebar/>
       </div>
+        <div className='main-content'>
+        <div>
+        <h1>Messages</h1>
+        </div>
+      </div>
+  </div>
     );
   }
-
 }
+
 export default Message;
