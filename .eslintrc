@@ -8,7 +8,7 @@
     "rules": {
         "quotes": ["warn", "single"],
         "semi": ["error", "always"],
-        "no-console": "warn",
+        "no-console": "off",
         "no-unused-vars": "warn",
         "react/prop-types": "off"
     },

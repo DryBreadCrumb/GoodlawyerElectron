@@ -31,17 +31,46 @@ export const authenticate = user => {
 				}
 			});
 	};
-
-	// return function(dispatch) {
-	// 	return axios.get('http://localhost:3001/users/lawyers', {
-	// 		params: {
-	// 			id: '5bc55e28ecea26bd9d880beb'
-	// 		}
-	// 	}).then((response) => {
-	// 		console.log(response);
-	// 		//dispatch(setFirstName(response.data[0].firstName));
-	// 	}).catch((e) => {
-	// 		console.log(e);
-	// 	});
-	// };
 };
+
+
+// ????? Was this inside above function?
+
+// return function(dispatch) {
+// 	return axios.get('http://localhost:3001/users/lawyers', {
+// 		params: {
+// 			id: '5bc55e28ecea26bd9d880beb'
+// 		}
+// 	}).then((response) => {
+// 		console.log(response);
+// 		//dispatch(setFirstName(response.data[0].firstName));
+// 	}).catch((e) => {
+// 		console.log(e);
+// 	});
+// };
+
+
+
+// LOGOUT STUFF
+
+// export const clearUser = () => {
+//     return {
+//         type:'CLEAR_ALL'
+//     };
+// };
+
+// export const logoutUser = () => {
+// 	return function (dispatch){
+// 		const jwt = JSON.parse(localStorage.getItem('u')).jwt;
+// 		return axios.delete('http://localhost:3001' + '/users/me/token',{	// UPDATE ME!
+// 			headers:{
+// 				'x-auth':jwt
+// 			}
+// 		}).then(() => {
+// 			localStorage.removeItem('u');
+// 			dispatch(clearUser());
+// 			closeSocket();
+// 		}).catch(() => {
+// 		});
+// 	};
+// };

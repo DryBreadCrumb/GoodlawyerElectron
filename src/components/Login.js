@@ -38,7 +38,7 @@ class Login extends React.Component {
 			});
 			//console.log('Storing', result);
 			store.set('jwt', result);
-			this.props.history.push('/landing');
+			this.props.history.push('/feed');
 			
 		}).catch( e => {
 			// TODO: check for specific error codes
