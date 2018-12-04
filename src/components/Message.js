@@ -15,7 +15,7 @@ class Message extends React.Component {
 
         <div className='main-content'>
             <span className='login-sub-title'>
-            Quotes Overview
+            Messages
             </span>
         </div>
     </div>
