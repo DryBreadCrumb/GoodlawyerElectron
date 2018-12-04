@@ -35,8 +35,11 @@ class Feed extends React.Component {
 		});
 	}
 
-	render() {
+	componentDidMount() {
 		this.getFeedItems();
+	}
+
+	render() {
 		return (
 			<div>
 				<div className="sidebar-general">
