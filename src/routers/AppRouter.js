@@ -9,9 +9,8 @@ import SettingsMain from '../components/SettingsMain';
 import JobsOverview from '../components/JobsOverview';
 import JobsDetails from '../components/JobsDetails';
 import Message from '../components/Message';
-
-// import Fixed from '../components/Fixed';
-// import FixedDetails from '../components/FixedDetails';
+import Fixed from '../components/Fixed';
+import FixedDetails from '../components/FixedDetails';
 
 class AppRouter extends React.Component {
 	constructor(props) {
@@ -31,17 +30,8 @@ class AppRouter extends React.Component {
 					<Route path='/jobs' component={JobsOverview} exact={true} /> 
 					<Route path='/jobs/:id' component={JobsDetails} exact={true} /> 
 					<Route path='/message' component={Message} exact={true} /> 
-
-					{/* 
-					<Route path='/quotes' component={Quotes} exact={true} />
-					<Route path='/quotes/:id' component={QuoteDetails} exact={true} />
-					<Route path='/jobs' component={Jobs} exact={true} />
-					<Route path='/jobs/:id' component={JobDetails} exact={true} />
-					<Route path='/message/:id' component={Message} exact={true} />
-					<Route path='/fixed' component={Fixed} exact={true} />
-					<Route path='/fixed/:id' component={FixedDetails} exact={true} /> 
-					*/}
-
+					<Route path='/fixed' component={Fixed} exact={true} /> 
+					<Route path='/fixed/:id' component={FixedDetails} exact={true} />
 				</Switch>
 			</div>
 		);

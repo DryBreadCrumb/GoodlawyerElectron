@@ -1,22 +1,21 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 
-class QuotesDetail extends React.Component {
-
+class FixedDetails extends React.Component {
     constructor(props){
         super(props);
     }
 
     render() {
         return (
-            <div>
+        <div>
             <div className='sidebar-general'>
                 <Sidebar/>
             </div>
 
             <div className='main-content'>
                 <span className='login-sub-title'>
-                Quotes Detail
+                Fixed Fee Jobs Detail
                 </span>
             </div>
         </div>
@@ -24,4 +23,4 @@ class QuotesDetail extends React.Component {
     }
 }
 
-export default QuotesDetail;
+export default FixedDetails;

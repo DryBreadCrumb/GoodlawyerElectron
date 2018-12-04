@@ -13,6 +13,7 @@ class Login extends React.Component {
 			password: 'User2Pass',
 			authStatus: ''
 		};
+
 		this.save = this.save.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.handleChange = this.handleChange.bind(this);
@@ -44,8 +45,6 @@ class Login extends React.Component {
 			// TODO: check for specific error codes
 				this.setState({ authStatus: 'Invalid Login' });
 		});
-		//debugger;
-		//console.log(token);
 	}
 
 	handleChange(e) {

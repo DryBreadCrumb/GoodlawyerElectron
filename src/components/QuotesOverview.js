@@ -1,9 +1,7 @@
-// /quotes
-
 import React from 'react';
 import Sidebar from './Sidebar';
 
-class QuotesOverview extends React.Component{
+class QuotesOverview extends React.Component {
 
     constructor(props){
         super(props);

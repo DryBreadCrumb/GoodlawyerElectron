@@ -18,7 +18,7 @@ class SettingsMain extends React.Component {
 
             <div className='main-content'>
 				<div id='settings-main'>
-				these are the settings
+				Settings
 			</div>
             </div>
         </div>
