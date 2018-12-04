@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-class JobsDetails extends React.Component{
+class JobsDetails extends React.Component {
     constructor(props){
         super(props);
     }
@@ -16,13 +15,12 @@ class JobsDetails extends React.Component{
 
             <div className='main-content'>
                 <span className='login-sub-title'>
-                JobDetail                
+                Job Detail                
                 </span>
             </div>
         </div>
         );
     }
-
 }
 
 export default JobsDetails;

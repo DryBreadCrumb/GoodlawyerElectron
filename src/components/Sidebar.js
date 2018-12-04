@@ -2,8 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter, Link} from 'react-router-dom';
 
-class Sidebar extends React.Component
-{
+class Sidebar extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -29,6 +28,12 @@ class Sidebar extends React.Component
 						</div>
 						<div className='link-item'>
 							<Link to={'/jobs/:id'}>Jobs - Detail</Link>
+						</div>
+						<div className='link-item'>
+							<Link to={'/fixed'}>Fixed Fee Jobs - Overview</Link>
+						</div>
+						<div className='link-item'>
+							<Link to={'/fixed/:id'}>Fixed Fee Jobs - Detail</Link>
 						</div>
 						<div className='link-item'>
 							<Link to={'/message'}>Messages</Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 
-class JobsOverview extends React.Component{
+class JobsOverview extends React.Component {
     constructor(props){
         super(props);
     }
