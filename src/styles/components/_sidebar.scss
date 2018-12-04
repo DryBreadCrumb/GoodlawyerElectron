@@ -24,6 +24,10 @@
 			}
 		}
 	}
+
+	.link-item {
+		margin-top: 30px;
+	}
 	}
 
   @media screen and (max-width:$breakpoint-m){
@@ -36,7 +40,7 @@
 		bottom:0;
 	}
   }
-  
+
   @media screen and (min-width:$breakpoint-m){
 	/*CONTENT STYLES W/ SIDE NAV*/
 	.content-side-nav{
@@ -47,4 +51,3 @@
 		bottom:0;
 	}
 	}
-	
