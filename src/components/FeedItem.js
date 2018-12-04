@@ -19,8 +19,4 @@ class FeedItem extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {
-	return {};
-};
-
-export default connect(mapStateToProps)(FeedItem);
+export default FeedItem;
