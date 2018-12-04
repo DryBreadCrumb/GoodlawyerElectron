@@ -1,23 +1,24 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 
-class Message extends React.Component{
-  constructor(props){
+class Message extends React.Component {
+  constructor(props) {
     super(props);
   }
-  render() {
-    return(
 
-      <div>
-      <div className='sidebar-general'>
-          <Sidebar/>
-      </div>
-        <div className='main-content'>
+  render() {
+    return (
         <div>
-        <h1>Messages</h1>
+        <div className='sidebar-general'>
+            <Sidebar/>
         </div>
-      </div>
-  </div>
+
+        <div className='main-content'>
+            <span className='login-sub-title'>
+            Messages
+            </span>
+        </div>
+    </div>
     );
   }
 }

@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { getFeed } from "../actions/feedAction";
-import Sidebar from "./Sidebar";
-import FeedItem from "./FeedItem";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getFeed } from '../actions/feedAction';
+import Sidebar from './Sidebar';
+import FeedItem from './FeedItem';
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -28,7 +28,6 @@ class Feed extends React.Component {
 		console.log("Starting GET request for new feed info");
 		this.props.dispatch(getFeed()).then(result => {
 			console.log("Done");
-			//console.log(result);
 			this.setState(() => {
 				return { jobs: result };
 			});

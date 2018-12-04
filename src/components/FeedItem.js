@@ -1,10 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
 
 class FeedItem extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {};
 	}
 

@@ -17,19 +17,19 @@ export const setUser = (user) => {
 export const authenticate = user => {
 	return (dispatch) => {
 		return axios
-			.post('http://kanchana.ddns.net:3001/users/login', user)
-			.then(function(response) {
-				console.log(response);
-				let user = response.data;
-				dispatch(setUser(user));
-				return response.headers['x-auth'];
-			})
-			.catch(e => {
-				if (e && e.response.status == 400) {
-					console.log('Bad login');
-					throw 'invalid';
-				}
-			});
+        .post('http://kanchana.ddns.net:3001/users/login', user)
+        .then(function(response) {
+            console.log(response);
+            let user = response.data;
+            dispatch(setUser(user));
+            return response.headers['x-auth'];
+        })
+        .catch(e => {
+            if (e && e.response.status == 400) {
+                console.log('Bad login');
+                throw 'invalid';
+            }
+        });
 	};
 };
 
