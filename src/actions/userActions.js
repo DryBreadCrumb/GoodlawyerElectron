@@ -17,7 +17,7 @@ export const setUser = (user) => {
 export const authenticate = user => {
 	return (dispatch) => {
 		return axios
-        .post('http://kanchana.ddns.net:3001/users/login', user)
+        .post('http://young-river-76901.herokuapp.com/users/login', user)
         .then(function(response) {
             console.log(response);
             let user = response.data;
