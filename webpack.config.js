@@ -42,7 +42,8 @@ module.exports = () => {
     devtool: 'inline-source-map',
     devServer: {
       contentBase: './',
-      historyApiFallback: true
+      historyApiFallback: true,
+      disableHostCheck: true
     }
   };
 };
