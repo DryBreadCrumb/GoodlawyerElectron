@@ -5,7 +5,7 @@ const store = createElectronStore();
 const jwt = store.get('jwt');
 
 var instance = axios.create({
-    baseURL: 'https://young-river-76901.herokuapp.com/',
+    baseURL: 'http://kanchana.ddns.net:3001/',
     timeout: 2000,
     headers: {'x-auth': jwt}
 });

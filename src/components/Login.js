@@ -9,8 +9,8 @@ class Login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			email: 'lawyer1@example.com',
-			password: 'lawyer1',
+			email: 'steve@example.com',
+			password: 'User2Pass',
 			authStatus: ''
 		};
 
@@ -32,7 +32,7 @@ class Login extends React.Component {
 			password: this.state.password
 		};
 		this.props.dispatch(authenticate(user)).then(result => {
-
+			
 			//this.setState({ authStatus: 'Logging in' });
 			this.setState(() => {
 				return {authStatus: 'Logging in'};
@@ -40,7 +40,7 @@ class Login extends React.Component {
 			//console.log('Storing', result);
 			store.set('jwt', result);
 			this.props.history.push('/feed');
-
+			
 		}).catch( e => {
 			// TODO: check for specific error codes
 				this.setState({ authStatus: 'Invalid Login' });
