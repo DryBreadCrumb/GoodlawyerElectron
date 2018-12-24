@@ -2,15 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import AppRouter from './routers/AppRouter';
-import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import userReducer from './reducers/userReducer';
+import configureStore from './store/configureStore';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 
-const store = createStore(userReducer,compose(applyMiddleware(thunkMiddleware)));
+const store = configureStore();
 
 const jsx = (
 
