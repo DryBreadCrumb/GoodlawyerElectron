@@ -5,7 +5,7 @@ const jwt = createElectronStore().get('jwt');
 
 export const webRequest = axios.create({
     baseURL: 'https://young-river-76901.herokuapp.com/',
-    timeout: 2000,
+    timeout: 4000,
     headers: {
     'x-auth': jwt
     }
