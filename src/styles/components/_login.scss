@@ -29,3 +29,19 @@
   font-weight: $light;
   display: block;
 }
+
+.login-signup-line {
+  color: $goodlawyer-black;
+  display: block;
+  font-size: $s-font;
+  font-weight: $regular;
+  text-align: center;
+}
+
+.login-signup-button {
+  color: $goodlawyer-green;
+  display: inline;
+  font-size: $s-font;
+  font-weight: $regular;
+  cursor: pointer;
+}

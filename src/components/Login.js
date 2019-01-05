@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setEmail, authenticate } from '../actions/userActions';
 import createElectronStore from 'electron-store-webpack-wrapper';
-
+import { shell } from 'electron';
 const store = createElectronStore();
 
 class Login extends React.Component {
@@ -17,6 +17,7 @@ class Login extends React.Component {
 		this.save = this.save.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleForgotPassword = this.handleForgotPassword.bind(this);
 		this.check = this.check.bind(this);
 	}
 
@@ -45,6 +46,11 @@ class Login extends React.Component {
 			// TODO: check for specific error codes
 				this.setState({ authStatus: 'Invalid Login' });
 		});
+	}
+
+	handleForgotPassword(e) {
+		e.preventDefault(); //not really required for a span though
+		shell.openExternal('https://www.goodlawyer.ca/forgot');
 	}
 
 	handleChange(e) {
@@ -103,6 +109,14 @@ class Login extends React.Component {
 									</button>
 									<button onClick={this.check}>Check</button>
 								</div>
+
+								<div className="col-12">
+                                    <span className="login-signup-line noselect">
+                                        <span 
+											className="login-signup-button noselect"
+											onClick={this.handleForgotPassword}>Forgot Password?</span>
+                                    </span>
+                                </div>
 
 								<div>
 									<label>{this.state.authStatus}</label>
