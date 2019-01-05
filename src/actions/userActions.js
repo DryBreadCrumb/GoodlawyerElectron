@@ -41,7 +41,7 @@ export const logout = user => {
     return (dispatch) => {
         return webRequest().delete('/users/me/token')
             .then(() => {
-                store.delete('jwt');
+                store.clear();
                 console.log('JWT deleted');
             })
             .catch(e => {
