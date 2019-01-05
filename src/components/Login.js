@@ -1,8 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react';
 import { connect } from 'react-redux';
 import { setEmail, authenticate } from '../actions/userActions';
 import createElectronStore from 'electron-store-webpack-wrapper';
 import { shell } from 'electron';
+import LoadingSpinner from './LoadingSpinner';
 const store = createElectronStore();
 
 class Login extends React.Component {
@@ -28,6 +30,7 @@ class Login extends React.Component {
 
 	handleClick(e) {
 		e.preventDefault();
+		this.setState({ isLoading: true });
 		let user = {
 			email: this.state.email,
 			password: this.state.password
@@ -65,7 +68,8 @@ class Login extends React.Component {
 	}
 
 	render() {
-		return (
+		return (this.state.isLoading ? <LoadingSpinner /> :
+		(
 			<div id='outerLogin'>
 				<div className='login-container'>
 					<div className='row login-content-row'>
@@ -126,6 +130,7 @@ class Login extends React.Component {
 					</div>
 				</div>
 			</div>
+		)
 		);
 	}
 }
