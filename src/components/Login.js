@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setEmail, authenticate } from '../actions/userActions';
 import createElectronStore from 'electron-store-webpack-wrapper';
-
+import { shell } from 'electron';
+import LoadingSpinner from './LoadingSpinner';
 const store = createElectronStore();
 
 class Login extends React.Component {
@@ -17,6 +18,7 @@ class Login extends React.Component {
 		this.save = this.save.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleForgotPassword = this.handleForgotPassword.bind(this);
 		this.check = this.check.bind(this);
 	}
 
@@ -27,6 +29,7 @@ class Login extends React.Component {
 
 	handleClick(e) {
 		e.preventDefault();
+		this.setState({ isLoading: true });
 		let user = {
 			email: this.state.email,
 			password: this.state.password
@@ -43,8 +46,16 @@ class Login extends React.Component {
 
 		}).catch( e => {
 			// TODO: check for specific error codes
-				this.setState({ authStatus: 'Invalid Login' });
+				this.setState({ 
+					authStatus: 'Invalid Login',
+					isLoading: false
+				});
 		});
+	}
+
+	handleForgotPassword(e) {
+		e.preventDefault(); //not really required for a span though
+		shell.openExternal('https://www.goodlawyer.ca/forgot');
 	}
 
 	handleChange(e) {
@@ -59,7 +70,8 @@ class Login extends React.Component {
 	}
 
 	render() {
-		return (
+		return (this.state.isLoading ? <LoadingSpinner /> :
+		(
 			<div id='outerLogin'>
 				<div className='login-container'>
 					<div className='row login-content-row'>
@@ -104,6 +116,14 @@ class Login extends React.Component {
 									<button onClick={this.check}>Check</button>
 								</div>
 
+								<div className="col-12">
+                                    <span className="login-signup-line noselect">
+                                        <span 
+											className="login-signup-button noselect"
+											onClick={this.handleForgotPassword}>Forgot Password?</span>
+                                    </span>
+                                </div>
+
 								<div>
 									<label>{this.state.authStatus}</label>
 								</div>
@@ -112,6 +132,7 @@ class Login extends React.Component {
 					</div>
 				</div>
 			</div>
+		)
 		);
 	}
 }

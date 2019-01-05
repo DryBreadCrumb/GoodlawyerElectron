@@ -1,12 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter, Link} from 'react-router-dom';
+import { logout } from '../actions/userActions';
 
 class Sidebar extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
 		};
+
+		this.doLogOut = this.doLogOut.bind(this);
+	}
+
+	doLogOut(e) {
+		console.log('starting delete');
+		this.props.dispatch(logout());
 	}
 
 	render(){
@@ -42,7 +50,7 @@ class Sidebar extends React.Component {
 							<Link to={'/settings'}>Settings</Link>
 						</div>
 						<div className='link-item'>
-							<Link to={'/login'}>Logout</Link>
+							<Link to={'/login'} onClick={this.doLogOut}>Logout</Link>
 						</div>
 					</div>
 				</div>	
@@ -56,4 +64,6 @@ const mapStateToProps = state => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps)(Sidebar));
+export default connect(mapStateToProps)(Sidebar);
+
+//export default withRouter(connect(mapStateToProps)(Sidebar));
