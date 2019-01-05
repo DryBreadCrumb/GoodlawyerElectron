@@ -47,7 +47,10 @@ class Login extends React.Component {
 
 		}).catch( e => {
 			// TODO: check for specific error codes
-				this.setState({ authStatus: 'Invalid Login' });
+				this.setState({ 
+					authStatus: 'Invalid Login',
+					isLoading: false
+				});
 		});
 	}
 
