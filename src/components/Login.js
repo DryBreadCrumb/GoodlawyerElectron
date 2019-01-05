@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react';
 import { connect } from 'react-redux';
 import { setEmail, authenticate } from '../actions/userActions';
 import createElectronStore from 'electron-store-webpack-wrapper';

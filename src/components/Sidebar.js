@@ -1,10 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter, Link} from 'react-router-dom';
-import createElectronStore from 'electron-store-webpack-wrapper';
-import { webRequest } from '../helpers/http';
-
-const store = createElectronStore();
+import { logout } from '../actions/userActions';
 
 class Sidebar extends React.Component {
 	constructor(props){
@@ -16,17 +13,8 @@ class Sidebar extends React.Component {
 	}
 
 	doLogOut(e) {
-		webRequest().delete('/users/me/token')
-		.then(() => {
-			store.delete('jwt');
-		})
-		.catch(e => {
-			if (e && e.response.status == 400) {
-				console.log('Something broke');
-				throw 'failed logout';
-			}
-		});
-		console.log('jwt deleted');
+		console.log('starting delete');
+		this.props.dispatch(logout());
 	}
 
 	render(){
@@ -76,4 +64,6 @@ const mapStateToProps = state => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps)(Sidebar));
+export default connect(mapStateToProps)(Sidebar);
+
+//export default withRouter(connect(mapStateToProps)(Sidebar));
