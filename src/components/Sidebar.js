@@ -1,12 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter, Link} from 'react-router-dom';
+import createElectronStore from 'electron-store-webpack-wrapper';
+
+const store = createElectronStore();
 
 class Sidebar extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
 		};
+
+		this.doLogOut = this.doLogOut.bind(this);
+	}
+
+	doLogOut(e) {
+		
 	}
 
 	render(){
@@ -42,7 +51,7 @@ class Sidebar extends React.Component {
 							<Link to={'/settings'}>Settings</Link>
 						</div>
 						<div className='link-item'>
-							<Link to={'/login'}>Logout</Link>
+							<Link to={'/login'} onClick={this.doLogOut}>Logout</Link>
 						</div>
 					</div>
 				</div>	

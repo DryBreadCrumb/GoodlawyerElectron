@@ -33,6 +33,13 @@ export const authenticate = user => {
 	};
 };
 
+export const logout = user => {
+    return (dispatch) => {
+        return axios
+        .post();
+    };
+};
+
 
 // ????? Was this inside above function?
 
