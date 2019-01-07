@@ -72,3 +72,21 @@ margin-left: 275px;
   position: relative;
   font-size: 16px;
 }
+
+.default-textarea{
+  width:100%;
+  min-height: 100px;
+  outline:none;
+  padding:10px;
+  border:solid 1px lightgray;
+  font-size: 14px;
+  font-weight: $light;
+}
+
+.error-text{
+  color:$error-color;
+  font-size:$s-font;
+  font-weight: $light;
+  margin-top:5px;
+  display: block;
+}
