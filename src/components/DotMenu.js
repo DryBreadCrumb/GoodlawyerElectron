@@ -5,17 +5,40 @@ class DotMenu extends React.Component {
     constructor(props) {
         super(props);
         
-        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.edit = this.edit.bind(this);
+        this.delete = this.delete.bind(this);
 
 		this.state = {
             dropdownIsOpen:false
         };
+    }
 
-        render(){
-            return (
+    edit(){
+        this.props.edit(this.props.item);
+        this.toggle();
+    }
+
+    delete(){
+        this.props.delete(this.props.item);
+        this.toggle();
+    }
+
+    toggle(){
+        this.setState(() => {
+            return {isMoreOpen:!this.state.isMoreOpen}
+        })
+    }
+
+    render(){
+        return (
+            <div className="dotmenu container">
+                <i onClick={this.toggle} id={this.props.id} className="dotmenu material-icons">
+                    more_vert
+                </i>
                 <Popover placement="bottom" 
                     isOpen={this.state.dropdownIsOpen} 
-                    target={'PopoverPriceBreakdown'+this.props.item._id} 
+                    target={this.props.id}
                     toggle={this.toggleDropdown}
                     >
                     <PopoverBody>
@@ -23,10 +46,9 @@ class DotMenu extends React.Component {
                         <button className="button-popover" onClick={this.handleDelete}>Delete</button>
                     </PopoverBody>
                 </Popover>
-            );
-        }
+            </div>
+        );
     }
-    
     
 }
 
