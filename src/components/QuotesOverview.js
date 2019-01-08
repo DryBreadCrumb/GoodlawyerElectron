@@ -14,7 +14,7 @@ class QuotesOverview extends React.Component {
         };
     }
 
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         this.props.dispatch(getQuotes());
     }
 
@@ -40,7 +40,7 @@ const mapStateToProps = (state,props) => {
     console.log(state);
     return {
         quotes:state.quoteReucer.quotes || {}
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps)(QuotesOverview);
