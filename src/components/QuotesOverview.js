@@ -14,7 +14,8 @@ class QuotesOverview extends React.Component {
         };
     }
 
-    UNSAFE_componentWillMount(){
+    // eslint-disable-next-line react/no-deprecated
+    componentWillMount(){
         this.props.dispatch(getQuotes());
     }
 
