@@ -1,4 +1,8 @@
 import axios from 'axios';
+import { webRequest } from '../helpers/http';
+import createElectronStore from 'electron-store-webpack-wrapper';
+
+const store = createElectronStore();
 
 export const setEmail = email => {
 	return {
@@ -31,6 +35,22 @@ export const authenticate = user => {
             }
         });
 	};
+};
+
+export const logout = user => {
+    return (dispatch) => {
+        return webRequest().delete('/users/me/token')
+            .then(() => {
+                store.clear();
+                console.log('JWT deleted');
+            })
+            .catch(e => {
+                if (e && e.response.status == 400) {
+                    console.log('Something broke');
+                    throw 'failed logout';
+                }
+            });
+    };
 };
 
 
