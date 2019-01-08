@@ -9,7 +9,7 @@ class QuoteItem extends React.Component {
 	render() {
 		let quotes = Array.from(this.props.quotes);
 		
-		console.log(this.props.quotes)
+		console.log(this.props.quotes);
 		return quotes.map(quote => (
 			<div key={quote._id}>
 				<span className="qqqqqq">{quote.status}</span>

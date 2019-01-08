@@ -9,7 +9,7 @@ class Feed extends React.Component {
 		super(props);
 
 		this.state = {
-			jobs: ""
+			jobs: ''
 		};
 
 		this.handleClick = this.handleClick.bind(this);
@@ -25,9 +25,9 @@ class Feed extends React.Component {
 	}
 
 	getFeedItems() {
-		console.log("Starting GET request for new feed info");
+		console.log('Starting GET request for new feed info');
 		this.props.dispatch(getFeed()).then(result => {
-			console.log("Done");
+			console.log('Done');
 			this.setState(() => {
 				return { jobs: result };
 			});
