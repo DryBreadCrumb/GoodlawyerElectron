@@ -35,5 +35,5 @@ workflows:
       - build_win:
           filters:
             branches:
-              ignore:
-                - docs
+              only:
+                - master
