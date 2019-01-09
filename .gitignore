@@ -2,3 +2,5 @@
 package-lock.json
 src/build/bundle.js
 src/build/styles.css
+
+out/
