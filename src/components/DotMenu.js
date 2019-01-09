@@ -26,20 +26,20 @@ class DotMenu extends React.Component {
 
     toggle(){
         this.setState(() => {
-            return {isMoreOpen:!this.state.isMoreOpen}
+            return {dropdownIsOpen:!this.state.dropdownIsOpen}
         })
     }
 
     render(){
         return (
             <div className="dotmenu container">
-                <i onClick={this.toggle} id={this.props.id} className="dotmenu material-icons">
+                <i onClick={this.toggle} id={this.props.id} className="dotmenu-icon material-icons">
                     more_vert
                 </i>
                 <Popover placement="bottom" 
                     isOpen={this.state.dropdownIsOpen} 
                     target={this.props.id}
-                    toggle={this.toggleDropdown}
+                    toggle={this.toggle}
                     >
                     <PopoverBody>
                         <button className="button-popover" onClick={this.handleEdit}>Edit</button>

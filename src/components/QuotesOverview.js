@@ -6,6 +6,7 @@ import { getQuotes } from '../actions/quoteAction';
 import Checkbox from './Checkbox';
 import TextArea from './TextArea';
 import Textbox from './Textbox';
+import DotMenu from './DotMenu';
 
 class QuotesOverview extends React.Component {
 
@@ -56,6 +57,10 @@ class QuotesOverview extends React.Component {
                     />
                     <TextArea 
                         label={'TextArea'}
+                        placeholder={'This is a textarea example'}
+                    />
+                    <DotMenu 
+                        id={'id'}
                         placeholder={'This is a textarea example'}
                     />
 					<span className="login-sub-title">Quotes</span>
