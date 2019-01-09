@@ -4,6 +4,8 @@ import Sidebar from './Sidebar';
 import QuoteItem from './QuoteItem';
 import { getQuotes } from '../actions/quoteAction';
 import Checkbox from './Checkbox';
+import TextArea from './TextArea';
+import Textbox from './Textbox';
 
 class QuotesOverview extends React.Component {
 
@@ -13,6 +15,7 @@ class QuotesOverview extends React.Component {
         this.state = {
             quotes: {},
             isChecked:false,
+            value:'',
         };
 
         this.check = this.check.bind(this);
@@ -38,9 +41,22 @@ class QuotesOverview extends React.Component {
 
             <div className="main-content">
                     <Checkbox 
-                        text={'This is a checkbox demo'}
+                        text={'This is a checkbox example'}
                         checked={this.state.isChecked}
                         check={this.check}
+                    />
+                    <Textbox 
+                        label={'Textbox'}
+                        placeholder={'This is a textbox example'}
+                        error={'error'}
+                    />
+                    <Textbox 
+                        label={'Textbox'}
+                        placeholder={'This is a textbox example'}
+                    />
+                    <TextArea 
+                        label={'TextArea'}
+                        placeholder={'This is a textarea example'}
                     />
 					<span className="login-sub-title">Quotes</span>
 					<div>
