@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
 import QuoteItem from './QuoteItem';
 import { getQuotes } from '../actions/quoteAction';
-import Checkbox from './../Checkbox';
+import Checkbox from './Checkbox';
 
 class QuotesOverview extends React.Component {
 
