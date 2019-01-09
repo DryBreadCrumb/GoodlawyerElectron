@@ -1,22 +1,22 @@
 version: 2
 
 jobs:
-  build:
+  build_win:
     docker:
-      - image: circleci/node:8.12.0
+      - image: electronuserland/builder:wine
 
     steps:
       - checkout
       - restore_cache:
           keys:
-            - deps-{{ checksum "package.lock" }}
+            - deps-{{ checksum "package.json" }}
       - restore_cache:
           keys:
             - v-3.0.4-electron
       - run:
           command: npm install
       - save_cache:
-          key: deps-{{ checksum "package.lock" }}
+          key: deps-{{ checksum "package.json" }}
           paths:
             - node_modules
       - save_cache:
@@ -24,16 +24,16 @@ jobs:
           paths:
             - ~/.cache/electron
       - run:
-          command: npm run dist
+          command: npm run dist:win
       - store_artifacts:
           path: out/goodlawyer_portable.exe
-          
+
 workflows:
   version: 2
-  build_and_test:
+  build_for_windows:
     jobs:
-      - build:
+      - build_win:
           filters:
             branches:
-              ignore:
-                - docs
+              only:
+                - master
