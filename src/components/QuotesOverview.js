@@ -1,10 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
+import QuoteItem from './QuoteItem';
+import { getQuotes } from '../actions/quoteAction';
 
 class QuotesOverview extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.state = {
+			quotes: {}
+        };
+    }
+
+    // eslint-disable-next-line react/no-deprecated
+    componentWillMount(){
+        this.props.dispatch(getQuotes());
     }
 
     render() {
@@ -14,14 +26,22 @@ class QuotesOverview extends React.Component {
                 <Sidebar/>
             </div>
 
-            <div className='main-content'>
-                <span className='login-sub-title'>
-                Quotes Overview
-                </span>
-            </div>
+            <div className="main-content">
+					<span className="login-sub-title">Quotes</span>
+					<div>
+						<QuoteItem quotes={this.props.quotes} />
+					</div>
+				</div>
         </div>
         );
     }
 }
 
-export default QuotesOverview;
+const mapStateToProps = (state,props) => {
+    console.log(state);
+    return {
+        quotes:state.quoteReucer.quotes || {}
+    };
+};
+
+export default connect(mapStateToProps)(QuotesOverview);
