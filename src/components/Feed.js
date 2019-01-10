@@ -4,6 +4,7 @@ import { getFeed } from '../actions/feedAction';
 import Sidebar from './Sidebar';
 import FeedItem from './FeedItem';
 import Header from './Header';
+import Checkbox from './Checkbox';
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -15,6 +16,7 @@ class Feed extends React.Component {
 
 		this.handleClick = this.handleClick.bind(this);
 		this.getFeedItems = this.getFeedItems.bind(this);
+		this.createRandomShit = this.createRandomShit.bind(this);
 	}
 
 	// logout(){
@@ -39,6 +41,15 @@ class Feed extends React.Component {
 		this.getFeedItems();
 	}
 
+	createRandomShit() {
+		let objects = [];
+		objects.push(<Checkbox />);
+		objects.push(<Checkbox />);
+		objects.push(<Checkbox />);
+
+		return objects;
+	}
+
 	render() {
 		return (
 			<div>
@@ -47,7 +58,7 @@ class Feed extends React.Component {
 				</div>
 
 				<div className="header">
-					<Header title="Feed" subtitle="Available Jobs" buttons={['a','b', 'c', 'd']}/>
+					<Header title="Feed" subtitle="Available Jobs" buttons={this.createRandomShit()}/>
 				</div>
 
 				<div className="main-content">

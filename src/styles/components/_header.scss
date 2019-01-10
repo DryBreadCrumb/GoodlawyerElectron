@@ -15,4 +15,9 @@
         font-size: $s-font;
         font-weight: $light;
     }
+
+    .header-buttons {
+        float: right;
+        position: absolute;
+    }
 }
