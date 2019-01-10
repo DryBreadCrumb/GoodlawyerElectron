@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
+import {Link} from 'react-router-dom';
 
 class SettingsMain extends React.Component {
 	constructor(props) {
@@ -19,6 +20,15 @@ class SettingsMain extends React.Component {
             <div className='main-content'>
 				<div id='settings-main'>
 				Settings
+
+				<div>
+				<Link className="button-big-ghost" to='/login'>Login</Link>
+				</div>
+
+				<div>
+				<Link className="button-big-primary" to='/login'>Login</Link>
+				</div>
+				
 			</div>
             </div>
         </div>
