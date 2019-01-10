@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getFeed } from '../actions/feedAction';
 import Sidebar from './Sidebar';
 import FeedItem from './FeedItem';
+import Header from './Header';
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -43,6 +44,10 @@ class Feed extends React.Component {
 			<div>
 				<div className="sidebar-general">
 					<Sidebar />
+				</div>
+
+				<div className="header">
+					<Header title="Feed" subtitle="Available Jobs" buttons={['a','b', 'c', 'd']}/>
 				</div>
 
 				<div className="main-content">

@@ -13,9 +13,17 @@ body {
   position: absolute;
 }
 
+.header {
+  position: absolute;
+  margin-left: 275px;
+  width: 100%;
+}
+
 .main-content {
 position: absolute;
 margin-left: 275px;
+margin-top: 50px;
+width: 100%;
 }
 
 .input-group {
