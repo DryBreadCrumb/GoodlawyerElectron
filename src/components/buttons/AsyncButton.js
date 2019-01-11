@@ -22,11 +22,10 @@ class AsyncButton extends React.Component {
 
         setTimeout(() => {
             this.setState({isLoading: false});
-        }, 5000);
+        }, 2000);
     }
 
     handleClick(e) {
-
         e.preventDefault();
         this.timer();
 

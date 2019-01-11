@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import Sidebar from './Sidebar';
 import {Link} from 'react-router-dom';
 import AsyncButton from './buttons/AsyncButton';
+import GhostButton from './buttons/GhostButton';
+import SolidButton from './buttons/SolidButton';
 
 class SettingsMain extends React.Component {
     constructor(props) {
@@ -18,21 +20,19 @@ class SettingsMain extends React.Component {
                 </div>
 
                 <div className='main-content'>
-                    <div id='settings-main'>
-                        Settings
 
-                        <div>
-                            <Link className="button-big-ghost" to='/login'>Login</Link>
-                        </div>
+                    Settings <i>aka button test</i>
 
-                        <div>
-                            <Link className="button-big-primary" to='/login'>Login</Link>
-                        </div>
+                    <div>
+                        <SolidButton>Async</SolidButton>
+                    </div>
 
-                        <div>
-                            <AsyncButton>Async</AsyncButton>
-                        </div>
+                    <div>
+                        <GhostButton>Async</GhostButton>
+                    </div>
 
+                    <div>
+                        <AsyncButton>Async</AsyncButton>
                     </div>
                 </div>
             </div>

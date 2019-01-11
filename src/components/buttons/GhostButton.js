@@ -1,27 +1,30 @@
 import React from 'react';
-import LoaderInline from './ButtonLoaderInline';
 
-class GhostButton extends React.Component{
-    constructor(props){
+class GhostButton extends React.Component {
+    constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this
+            .handleClick
+            .bind(this);
     }
 
-    render(){
+    handleClick() {
+        if (typeof this.props.onClick !== 'undefined') {
+            this
+                .props
+                .onClick();
+        }
+    }
+
+    render() {
         return (
-            <div className={this.props.size === 'small' ? ('async-button-container small') : ('async-button-container large')}>
-                {this.props.isLoading ? (
-                    <span className={this.props.size === 'small' ? ('spacer') : ('spacer large')}>
-                        <LoaderInline />
+            <div>
+                <button onClick={this.handleClick} className={('button-big-ghost overflow')}>
+                    <span>
+                        {this.props.children}
                     </span>
-                ) : (
-                    <button onClick={this.handleClick} className={this.props.size === 'small' ? ('button-small-primary overflow') : ('button-big-primary overflow')}>
-                        <span>
-                            {this.props.children}
-                        </span>
-                    </button>
-                )}
+                </button>
             </div>
         );
     }
