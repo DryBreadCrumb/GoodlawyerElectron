@@ -1,35 +1,54 @@
 import React from 'react';
 import LoaderInline from './ButtonLoaderInline';
 
-class AsyncButton extends React.Component{
-    constructor(props){
+class AsyncButton extends React.Component {
+    constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            isLoading: false
+        };
+        this.handleClick = this
+            .handleClick
+            .bind(this);
+
+        this.timer = this
+            .timer
+            .bind(this);
     }
 
-    handleClick(){
-        if(!this.props.isLoading && typeof this.props.onClick !== 'undefined'){
-            this.props.onClick();
-        }
+    timer() {
+        this.setState({isLoading: true});
+
+        setTimeout(() => {
+            this.setState({isLoading: false});
+        }, 5000);
     }
 
-    render(){
-        return (
-            <div className={this.props.size === 'small' ? ('async-button-container small') : ('async-button-container large')}>
-                {this.props.isLoading ? (
-                    <span className={this.props.size === 'small' ? ('spacer') : ('spacer large')}>
-                        <LoaderInline />
-                    </span>
-                ) : (
-                    <button onClick={this.handleClick} className={this.props.size === 'small' ? ('button-small-primary overflow') : ('button-big-primary overflow')}>
+    handleClick(e) {
+
+        e.preventDefault();
+        this.timer();
+
+        // if (!this.props.isLoading) {this.props.onClick();}
+    }
+
+    render() {
+        return (this.state.isLoading
+            ? <LoaderInline/>
+            : (
+                <div>
+                    <button
+                        onClick={this.handleClick}
+                        className={this.props.size === 'small'
+                        ? ('button-small-primary overflow')
+                        : ('button-big-primary overflow')}>
                         <span>
                             {this.props.children}
                         </span>
                     </button>
-                )}
-            </div>
-        );
+                </div>
+            ));
     }
 }
 

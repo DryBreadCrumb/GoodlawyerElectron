@@ -1,11 +1,3 @@
-.async-button-container.small {
-    display: inline-block;
-}
-
-.async-button-container.large {
-    display: block;
-}
-
 .button-big-primary {
     width: 100%;
     background-color: $goodlawyer-green;
@@ -67,6 +59,7 @@
     margin-right: 10px;
 }
 
+
 .button-big-primary:hover,
 .button-big-primary:active,
 .button-big-primary:focus,
@@ -97,4 +90,10 @@
 .button-small-light:hover,
 .button-small-light:active {
     color: lightgrey;
+}
+
+// OVERFLOW //
+
+.button-small-primary.overflow{
+    overflow: hidden;
 }

@@ -47,9 +47,9 @@
     font-style: normal;
 }
 
-.button-big-ghost:visited,
-.button-big-ghost:link,
 .button-big-ghost:active,
-.button-big-ghost:focus {
+.button-big-ghost:focus,
+.button-big-ghost:link,
+.button-big-ghost:visited {
     outline: none;
 }
