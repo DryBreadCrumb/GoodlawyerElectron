@@ -1,3 +1,6 @@
+### Build Status
+[![CircleCI](https://circleci.com/gh/parkerSmith725/GoodlawyerElectron.svg?style=svg&circle-token=e70a4d08e4cf270f5918d75c9e91b972e3e415d0)](https://circleci.com/gh/parkerSmith725/GoodlawyerElectron)
+
 # Goodlawyer Electron
 
 ### Installation instructions
