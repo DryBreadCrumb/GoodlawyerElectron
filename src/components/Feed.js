@@ -37,6 +37,7 @@ class Feed extends React.Component {
 		this.getFeedItems();
 	}
 
+	// Todo: this is just a random method to populate the children components for now. Remove when required
 	createRandomShit() {
 		let objects = [];
 		objects.push(<Checkbox key='1'/>);

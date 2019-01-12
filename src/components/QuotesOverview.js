@@ -7,6 +7,7 @@ import Checkbox from './Checkbox';
 import TextArea from './TextArea';
 import Textbox from './Textbox';
 import DotMenu from './DotMenu';
+import Header from './Header';
 
 class QuotesOverview extends React.Component {
 
@@ -38,6 +39,10 @@ class QuotesOverview extends React.Component {
             <div>
             <div className='sidebar-general'>
                 <Sidebar/>
+            </div>
+
+            <div className='header'>
+                <Header title="Quotes" subtitle="Some subtitle" />
             </div>
 
             <div className="main-content">
