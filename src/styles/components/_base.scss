@@ -1,61 +1,61 @@
-	html {
-	    font-size: 62.5%;
-	}
+html {
+	font-size: 62.5%;
+}
 
-	body {
-	    //font-family: Helvetica, Arial, sans-serif;
-	    font-family: 'Montserrat', sans-serif;
-	    font-size: $m-size;
-	    background: white;
-	}
+body {
+	//font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-size: $m-size;
+	background: white;
+}
 
-	.sidebar-general {
-	    position: absolute;
-	}
+.sidebar-general {
+	position: absolute;
+}
 
-	.main-content {
-	    position: absolute;
-	    margin-left: 275px;
-	}
+.main-content {
+	position: absolute;
+	margin-left: 275px;
+}
 
-	.input-group {
-	    margin-top: 10px;
-	    margin-bottom: 10px;
-	    display: block;
-	}
+.input-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+}
 
-	.input-default {
-	    width: 100%;
-	    padding: 10px;
-	    outline: none;
-	    border: solid 1px lightgray;
-	    font-size: 14px;
-	    font-weight: $light;
-	}
+.input-default {
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: solid 1px lightgray;
+	font-size: 14px;
+	font-weight: $light;
+}
 
-	.default-text-label {
-	    color: $goodlawyer-black;
-	    font-size: 14px;
-	    font-weight: $regular;
-	    margin-bottom: 5px;
-	    display: block;
-	    text-align: left;
-	}
+.default-text-label {
+	color: $goodlawyer-black;
+	font-size: 14px;
+	font-weight: $regular;
+	margin-bottom: 5px;
+	display: block;
+	text-align: left;
+}
 
-	.error-text {
-	    color: $error-color;
-	    font-size: $s-font;
-	    font-weight: $light;
-	    margin-top: 5px;
-	    display: block;
-	}
+.error-text {
+	color: $error-color;
+	font-size: $s-font;
+	font-weight: $light;
+	margin-top: 5px;
+	display: block;
+}
 
-	.default-textarea {
-	    width: 100%;
-	    min-height: 100px;
-	    outline: none;
-	    padding: 10px;
-	    border: solid 1px lightgray;
-	    font-size: 14px;
-	    font-weight: $light;
-	}
+.default-textarea {
+	width: 100%;
+	min-height: 100px;
+	outline: none;
+	padding: 10px;
+	border: solid 1px lightgray;
+	font-size: 14px;
+	font-weight: $light;
+}

@@ -3,9 +3,9 @@ import {css} from 'react-emotion';
 import {GridLoader} from 'react-spinners';
 
 const override = css `
-display: block;
-margin: 0 auto;
-border-color: red;
+    display: block;
+    margin: 0 auto;
+    border-color: red;
 `;
 
 class LoadingSpinner extends React.Component {
