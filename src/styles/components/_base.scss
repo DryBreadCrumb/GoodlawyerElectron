@@ -13,9 +13,17 @@ body {
 	position: absolute;
 }
 
+.header {
+  position: absolute;
+  margin-left: $sidebar-width;
+  width: calc(100% - #{$sidebar-width});
+}
+
 .main-content {
-	position: absolute;
-	margin-left: 275px;
+position: absolute;
+margin-left: 275px;
+margin-top: 50px;
+width: calc(100% - #{$sidebar-width});
 }
 
 .input-group {

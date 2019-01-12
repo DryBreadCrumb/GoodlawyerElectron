@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { getFeed } from '../actions/feedAction';
 import Sidebar from './Sidebar';
 import FeedItem from './FeedItem';
+import Header from './Header';
+import Checkbox from './Checkbox';
 
 class Feed extends React.Component {
 	constructor(props) {
@@ -14,11 +16,8 @@ class Feed extends React.Component {
 
 		this.handleClick = this.handleClick.bind(this);
 		this.getFeedItems = this.getFeedItems.bind(this);
+		this.createRandomShit = this.createRandomShit.bind(this);
 	}
-
-	// logout(){
-	//     this.props.dispatch(logoutUser());
-	// }
 
 	handleClick(e) {
 		e.preventDefault();
@@ -38,6 +37,16 @@ class Feed extends React.Component {
 		this.getFeedItems();
 	}
 
+	// Todo: this is just a random method to populate the children components for now. Remove when required
+	createRandomShit() {
+		let objects = [];
+		objects.push(<Checkbox key='1'/>);
+		objects.push(<Checkbox key='2'/>);
+		objects.push(<Checkbox key='3'/>);
+
+		return objects;
+	}
+
 	render() {
 		return (
 			<div>
@@ -45,8 +54,11 @@ class Feed extends React.Component {
 					<Sidebar />
 				</div>
 
+				<div className="header">
+					<Header title="Feed" subtitle="Available Jobs">{this.createRandomShit()}</Header>
+				</div>
+
 				<div className="main-content">
-					<span className="login-sub-title">Available Jobs</span>
 					<div>
 						<FeedItem jobs={this.state.jobs} />
 					</div>
