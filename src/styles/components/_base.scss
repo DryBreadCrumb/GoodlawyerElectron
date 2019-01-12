@@ -15,15 +15,15 @@ body {
 
 .header {
   position: absolute;
-  margin-left: 275px;
-  width: 75vw;
+  margin-left: $sidebar-width;
+  width: calc(100% - #{$sidebar-width});
 }
 
 .main-content {
 position: absolute;
 margin-left: 275px;
 margin-top: 50px;
-width: 100%;
+width: calc(100% - #{$sidebar-width});
 }
 
 .input-group {
