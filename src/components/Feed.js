@@ -19,10 +19,6 @@ class Feed extends React.Component {
 		this.createRandomShit = this.createRandomShit.bind(this);
 	}
 
-	// logout(){
-	//     this.props.dispatch(logoutUser());
-	// }
-
 	handleClick(e) {
 		e.preventDefault();
 	}
@@ -43,9 +39,9 @@ class Feed extends React.Component {
 
 	createRandomShit() {
 		let objects = [];
-		objects.push(<Checkbox />);
-		objects.push(<Checkbox />);
-		objects.push(<Checkbox />);
+		objects.push(<Checkbox key='1'/>);
+		objects.push(<Checkbox key='2'/>);
+		objects.push(<Checkbox key='3'/>);
 
 		return objects;
 	}
@@ -58,11 +54,10 @@ class Feed extends React.Component {
 				</div>
 
 				<div className="header">
-					<Header title="Feed" subtitle="Available Jobs" buttons={this.createRandomShit()}/>
+					<Header title="Feed" subtitle="Available Jobs">{this.createRandomShit()}</Header>
 				</div>
 
 				<div className="main-content">
-					<span className="login-sub-title">Available Jobs</span>
 					<div>
 						<FeedItem jobs={this.state.jobs} />
 					</div>
