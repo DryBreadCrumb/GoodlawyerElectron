@@ -5,18 +5,22 @@ import Sidebar from './Sidebar';
 import FeedItem from './FeedItem';
 import Header from './Header';
 import Checkbox from './Checkbox';
+import SlideSection from './SlideSection';
 
 class Feed extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			jobs: ''
+			jobs: '',
+			isSlideOpen: false
 		};
 
 		this.handleClick = this.handleClick.bind(this);
 		this.getFeedItems = this.getFeedItems.bind(this);
 		this.createRandomShit = this.createRandomShit.bind(this);
+		this.toggleSlide = this.toggleSlide.bind(this);
+
 	}
 
 	handleClick(e) {
@@ -47,6 +51,14 @@ class Feed extends React.Component {
 		return objects;
 	}
 
+	toggleSlide(){
+		this.setState(() => {
+			return {
+				isSlideOpen: !this.state.isSlideOpen
+			};
+		});
+	}
+
 	render() {
 		return (
 			<div>
@@ -59,9 +71,10 @@ class Feed extends React.Component {
 				</div>
 
 				<div className="main-content">
-					<div>
+					<div onClick={this.toggleSlide}>
 						<FeedItem jobs={this.state.jobs} />
 					</div>
+					<SlideSection close={this.toggleSlide} open={this.state.isSlideOpen}>shamalamadingdong</SlideSection>
 				</div>
 			</div>
 		);
