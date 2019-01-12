@@ -1,7 +1,6 @@
 import React from 'react';
-import { css } from 'react-emotion';
-import { GridLoader } from 'react-spinners';
-
+import {css} from 'react-emotion';
+import {GridLoader} from 'react-spinners';
 
 const override = css `
     display: block;
@@ -18,16 +17,15 @@ class LoadingSpinner extends React.Component {
     }
 
     render() {
-        return ( 
-        <div className = 'login-loader'>
-            <GridLoader 
-            className={override}
-            sizeUnit = { 'px' }
-            size = { 20 }
-            color = {'#008e80'}
-            loading = {this.state.loading}
-            /> 
-        </div>
+        return (
+            <div className='login-loader'>
+                <GridLoader
+                    className={override}
+                    sizeUnit={'px'}
+                    size={20}
+                    color={'#008e80'}
+                    loading={this.state.loading}/>
+            </div>
         );
     }
 }
